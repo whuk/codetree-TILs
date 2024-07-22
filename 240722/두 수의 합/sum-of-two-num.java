@@ -21,6 +21,7 @@ public class Main {
         }
         int result = 0;
         for(int i=0; i<n; i++) {
+            if(map.size == 0) break;
             int key = arr[i];
             if(map.get(key) != null &&
             map.get(p-key) !=null) {
