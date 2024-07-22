@@ -32,6 +32,7 @@ public class Main {
                 } else {
                     map.remove(key);
                 }
+                if(map.size() == 0) break;
                 int pValue = map.get(p-key) - 1;
                 if(pValue > 0) {
                     map.put(p-key, pValue);
