@@ -11,36 +11,27 @@ public class Main {
         int[] arr = new int[n];
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for(int i=0; i<n; i++) {
-            int key = sc.nextInt();
-            arr[i] = key;
-            if(map.get(key) == null) {
-                map.put(key, 1);
+            arr[i] = sc.nextInt();
+            if(map.get(arr[i]) == null) {
+                map.put(arr[i], 1);
             } else {
-                map.put(key, map.get(key) + 1);
+                map.put(arr[i],map.get(arr[i]) + 1);
             }
         }
         int result = 0;
         for(int i=0; i<n; i++) {
-            if(map.size() == 0) break;
             int key = arr[i];
-            if(map.get(key) != null &&
-            map.get(p-key) !=null) {
-                result++;
-                int keyValue = map.get(key) - 1;
-                if(keyValue > 0) {
-                    map.put(key, keyValue);
-                } else {
-                    map.remove(key);
-                }
-                if(map.size() == 0) break;
-                int pValue = map.get(p-key) - 1;
-                if(pValue > 0) {
-                    map.put(p-key, pValue);
-                } else {
-                    map.remove(p-key);
-                }
+            if(map.get(key) == 1) {
+                map.remove(key);
+            } else {
+                map.put(key, map.get(key) -1); 
             }
-        }
+            if(map.get(p-key) != null) {
+                result += map.get(p-key);
+            }
+
+         }
+
         System.out.println(result);
     }
 }
