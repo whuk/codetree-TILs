@@ -15,7 +15,7 @@ public class Main {
             target[i] = sc.nextInt();
         }
 
-        String result = "Yes";
+        String result = "No";
         for (int i = 0; i < n; i++) {
             if (arr[i] == target[0]) {
 
@@ -24,9 +24,9 @@ public class Main {
                         result = "No";
                         break;
                     }
-                }
-                if (result.equals("Yes")) {
-                    break;
+                    if(j== p-1) {
+                        result = "Yes";
+                    }
                 }
             }
         }
