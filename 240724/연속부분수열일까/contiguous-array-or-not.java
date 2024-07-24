@@ -24,9 +24,13 @@ public class Main {
                         result = "No";
                         break;
                     }
-                    if(j== p-1) {
+                    if (j == p - 1) {
                         result = "Yes";
+                        break;
                     }
+                }
+                if (result.equals("Yes")) {
+                    break;
                 }
             }
         }
