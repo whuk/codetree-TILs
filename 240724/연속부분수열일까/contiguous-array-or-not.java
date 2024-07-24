@@ -19,7 +19,10 @@ public class Main {
         for (int i = 0; i < n; i++) {
             if (arr[i] == target[0]) {
 
-                for (int j = 1, k = i + 1; j < p; j++, k++) {
+                for (int j = 0, k = i; j < p; j++, k++) {
+                    if (k >= n) {
+                        break;
+                    }
                     if (arr[k] != target[j]) {
                         result = "No";
                         break;
