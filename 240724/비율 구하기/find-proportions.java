@@ -21,7 +21,7 @@ public class Main {
         Iterator<Entry<String, Integer>> it = map.entrySet().iterator();
         while(it.hasNext()) {
             Entry<String, Integer> entry = it.next();
-            double rate = Math.round( Double.valueOf(entry.getValue()) *10000.0 / Double.valueOf(n) / 100.0) ;
+            double rate = Math.round( Double.valueOf(entry.getValue()) / Double.valueOf(n) * 100.0) ;
             String result = String.format("%.4f", rate);
             System.out.println(entry.getKey() + " " + result);
         }
